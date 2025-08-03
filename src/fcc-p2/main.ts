@@ -28,14 +28,14 @@ controls.enableDamping = true;
 function animate(t = 0) {
   console.log(t);
   requestAnimationFrame(animate);
-  object.rotation.x = t / 10000;
-  object.rotation.y = t / 10000;
+  // object.rotation.x = t / 10000;
+  // object.rotation.y = t / 10000;
   renderer.render(scene, camera);
   controls.update();
 }
 
 // geometry
-const geometry = new THREE.IcosahedronGeometry(1, 2);
+const geometry = new THREE.IcosahedronGeometry(1, 12);
 // material
 const material = new THREE.MeshStandardMaterial({
   color: "0xffffff",
