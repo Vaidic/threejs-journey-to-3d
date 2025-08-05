@@ -71,7 +71,7 @@ cloudMesh.scale.setScalar(1.03);
 const earthGroup = new THREE.Group();
 earthGroup.add(object);
 // tilt 23.5 degrees
-earthGroup.rotation.z = 23.5 * (Math.PI / 180);
+earthGroup.rotation.z = -23.5 * (Math.PI / 180);
 earthGroup.add(lightMesh);
 earthGroup.add(cloudMesh);
 
@@ -87,3 +87,10 @@ scene.add(stars);
 animate();
 
 // maps from https://planetpixelemporium.com/earth.html
+
+function handleWindowResize() {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+}
+window.addEventListener("resize", handleWindowResize, false);
